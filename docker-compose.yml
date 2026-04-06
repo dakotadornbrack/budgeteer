@@ -7,6 +7,7 @@ services:
       PORT: "8080"
       DATABASE_URL: "postgres://postgres:postgres@db:5432/budgeteer?sslmode=disable"
       REDIS_URL: "redis://cache:6379"
+    restart: on-failure
     depends_on:
       db:
         condition: service_healthy
